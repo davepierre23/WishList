@@ -19,11 +19,15 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material/material.module";
+import { HeaderBarComponent } from './header-bar/header-bar.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderBarComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
