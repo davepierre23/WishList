@@ -1,1 +1,48 @@
-<p>sign-in works!</p>
+<!-- <app-header-bar></app-header-bar> -->
+
+<mat-card class="example-card">
+  <mat-card-header class="main-div">
+    <mat-card-title>Sign in
+      <span class="material-icons">
+        account_box
+      </span>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [hidden]="success" [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="main-div">
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput placeholder=" Email Address" formControlName="emailAddress">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="main-div">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-icon matSuffix>password</mat-icon>
+          <p *ngIf="password!.invalid && (password!.dirty || password!.touched)"> your password invalid</p>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="main-div">
+        <button mat-raised-button color="primary" class="btn-login" [disabled]="!loginForm.valid"
+          type="submit">Login<span class="material-icons">
+            login
+          </span></button>
+      </div>
+    </form>
+
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+  <mat-divider></mat-divider>
+  <div class="main-div">
+    <button mat-raised-button color="primary" type="submit" [routerLink]="['/sign-up']">
+      Create Account
+    </button>
+  </div>
+</mat-card>

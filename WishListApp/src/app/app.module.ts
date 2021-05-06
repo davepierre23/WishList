@@ -5,6 +5,13 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//Services used
+import {UserService } from "./shared/services/userService/user.service";
+import {AuthService} from "./shared/services/authService/auth.service";
+import {AuthGuard} from "./shared/guards/auth.guard";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,9 +36,11 @@ import { MaterialModule } from "./material/material.module";
     MaterialModule,
     AngularFireAuthModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard,AuthService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
