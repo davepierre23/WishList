@@ -21,13 +21,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material/material.module";
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AddItemFormComponent } from './add-item-form/add-item-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
     HeaderBarComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    HomePageComponent,
+    AddItemFormComponent
   ],
   imports: [
     BrowserModule,
